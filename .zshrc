@@ -12,6 +12,6 @@ plugins=(
 )
 
 # https://ohmyz.sh/
-source $ZSH/oh-my-zsh.sh
 export ZSH=$HOME/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 

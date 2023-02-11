@@ -11,3 +11,6 @@ git config --global user.name "John Doe"
 ```
 git config --global user.email johndoe@example.com
 ```
+
+# VS Code 配置
+- https://github.com/Debbl/vscode-settings

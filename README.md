@@ -1,3 +1,11 @@
+# Oh My Zsh
+```
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+```
+```
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+```
+
 # SSH
 ```
 ssh-keygen -m PEM -t ed25519 -C "your.email@example.com"

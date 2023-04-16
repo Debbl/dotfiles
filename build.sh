@@ -7,6 +7,6 @@ dotfiles=(
 )
 
 for file in ${dotfiles[@]}; do
-    cp "_$file" "$(pwd)/$file"
+    cp "_$file" "$HOME/$file"
     echo "copy _$file done" 
 done

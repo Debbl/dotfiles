@@ -15,3 +15,11 @@ plugins=(
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# ---------------------------------- #
+# Directories
+
+function i() {
+  cd ~/i/$1
+}
+
+# ---------------------------------- #

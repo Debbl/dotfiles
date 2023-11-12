@@ -1,0 +1,12 @@
+# Personal account, - the default config
+Host github.com
+   HostName github.com
+   User git
+   IdentityFile ~/.ssh/id_ed25519
+   ProxyCommand nc -v -x 127.0.0.1:7890 %h %p
+
+# Work account-1
+Host git.xxx.me
+   HostName git.xxx.me
+   User git
+   IdentityFile ~/.ssh/id_ed25519_xxx

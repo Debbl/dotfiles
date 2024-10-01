@@ -1,9 +1,10 @@
 [user]
-	name = Debbl
+	name = Brendan Dash
 	email = me@aiwan.run
 [core]
 	quotepath = false
 [http "https://github.com"]
-	proxy = socks5://127.0.0.1:7890
+	proxy = socks5://127.0.0.1:6153
 [https "https://github.com"]
-	proxy = http://127.0.0.1:7890
+	proxy = http://127.0.0.1:6152
+

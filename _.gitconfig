@@ -3,6 +3,7 @@
 	email = me@aiwan.run
 [core]
 	quotepath = false
+	ignorecase = false
 [http "https://github.com"]
 	proxy = socks5://127.0.0.1:6153
 [https "https://github.com"]

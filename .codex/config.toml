@@ -1,0 +1,8 @@
+[mcp_servers.deepwiki]
+url = "https://mcp.deepwiki.com/mcp"
+enabled = true
+
+[mcp_servers.context7]
+url = "https://mcp.context7.com/mcp"
+http_headers = { "CONTEXT7_API_KEY" = "YOUR_API_KEY" }
+enabled = true

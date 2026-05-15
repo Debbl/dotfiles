@@ -23,11 +23,14 @@ config.keys = {
   { key = 'k', mods = 'LEADER', action = act.ActivatePaneDirection 'Up' },
   { key = 'l', mods = 'LEADER', action = act.ActivatePaneDirection 'Right' },
 
-  -- pane 大小调整
-  { key = 'H', mods = 'LEADER|SHIFT', action = act.AdjustPaneSize { 'Left', 5 } },
-  { key = 'J', mods = 'LEADER|SHIFT', action = act.AdjustPaneSize { 'Down', 5 } },
-  { key = 'K', mods = 'LEADER|SHIFT', action = act.AdjustPaneSize { 'Up', 5 } },
-  { key = 'L', mods = 'LEADER|SHIFT', action = act.AdjustPaneSize { 'Right', 5 } },
+  -- 单次调整(按一次 Ctrl+A 调一格)
+  { key = 'h', mods = 'LEADER|SHIFT', action = act.AdjustPaneSize { 'Left', 5 } },
+  { key = 'j', mods = 'LEADER|SHIFT', action = act.AdjustPaneSize { 'Down', 5 } },
+  { key = 'k', mods = 'LEADER|SHIFT', action = act.AdjustPaneSize { 'Up', 5 } },
+  { key = 'l', mods = 'LEADER|SHIFT', action = act.AdjustPaneSize { 'Right', 5 } },
+
+  -- 进入 resize 模式(Ctrl+A → r),之后 h/j/k/l 可连按,Esc/Enter/q 退出
+  { key = 'r', mods = 'LEADER', action = act.ActivateKeyTable { name = 'resize_pane', one_shot = false, timeout_milliseconds = 5000 } },
 
   -- pane 操作
   { key = 'x', mods = 'LEADER', action = act.CloseCurrentPane { confirm = true } },
@@ -54,6 +57,23 @@ config.keys = {
   -- 复制模式 / 搜索
   { key = '[', mods = 'LEADER', action = act.ActivateCopyMode },
   { key = '/', mods = 'LEADER', action = act.Search 'CurrentSelectionOrEmptyString' },
+}
+
+-- resize 模式:Ctrl+A → r 进入,h/j/k/l 连续调整,Esc/Enter/q 退出
+config.key_tables = {
+  resize_pane = {
+    { key = 'h',      action = act.AdjustPaneSize { 'Left', 1 } },
+    { key = 'j',      action = act.AdjustPaneSize { 'Down', 1 } },
+    { key = 'k',      action = act.AdjustPaneSize { 'Up', 1 } },
+    { key = 'l',      action = act.AdjustPaneSize { 'Right', 1 } },
+    { key = 'LeftArrow',  action = act.AdjustPaneSize { 'Left', 1 } },
+    { key = 'DownArrow',  action = act.AdjustPaneSize { 'Down', 1 } },
+    { key = 'UpArrow',    action = act.AdjustPaneSize { 'Up', 1 } },
+    { key = 'RightArrow', action = act.AdjustPaneSize { 'Right', 1 } },
+    { key = 'Escape', action = 'PopKeyTable' },
+    { key = 'Enter',  action = 'PopKeyTable' },
+    { key = 'q',      action = 'PopKeyTable' },
+  },
 }
 
 return config

@@ -7,6 +7,9 @@ config.font = wezterm.font 'MesloLGS NF'
 config.font_size = 14.0
 config.color_scheme = 'Catppuccin Mocha'
 
+-- 关闭 pane / tab / 窗口时,即使只跑着 shell 也要弹确认
+config.skip_close_confirmation_for_processes_named = {}
+
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
 
 config.keys = {
